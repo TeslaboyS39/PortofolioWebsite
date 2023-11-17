@@ -8,6 +8,17 @@ import Expressjs from "../../assets/expressjslogo.png";
 import Sequelize from "../../assets/sequelizelogo.png";
 import Vue from "../../assets/vuejslogo.png";
 import ReactJS from "../../assets/reactjslogo.png";
+import NodeJS from "../../assets/nodejslogo.png";
+import MongoDB from "../../assets/mongodblogo.png";
+import Jquery from "../../assets/jquerylogo.png";
+import Jest from "../../assets/jestlogo.png";
+import Tailwind from "../../assets/tailwindlogo.png";
+import Redux from "../../assets/reduxlogo.png";
+import Redis from "../../assets/redislogo.png";
+import Pinia from "../../assets/pinialogo.png";
+import GraphQL from "../../assets/graphqllogo.png";
+import Bootstrap from "../../assets/bootstraplogo.png";
+import Apollo from "../../assets/apollologo.png";
 import LinkedinIcon from "../../assets/linkedinIcon.png";
 import GithubIcon from "../../assets/githubIcon.png";
 import emailjs from "@emailjs/browser";
@@ -46,18 +57,87 @@ const Contact = () => {
       <div id="clients">
         <h1 className="contactPageTitle">My Skills</h1>
         <p className="clientDesc">
-          I have had the opportunity to work with a diverse group of companies.
-          Some of the notable companies I have worked with includes
+          I have built proficiency in various technologies and tools throughout
+          my journey. Below are some of the key components of my technical
+          expertise, including the tech stack and tools I am proficient in:
         </p>
         <div className="clientImgs">
-          <img src={HTML} alt="Client" className="clientImg" />
-          <img src={CSS} alt="Client" className="clientImg" />
-          <img src={JS} alt="Client" className="clientImg" />
-          <img src={PG} alt="Client" className="clientImg" />
-          <img src={Expressjs} alt="Client" className="clientImg" />
-          <img src={Sequelize} alt="Client" className="clientImg" />
-          <img src={Vue} alt="Client" className="clientImg" />
-          <img src={ReactJS} alt="Client" className="clientImg" />
+          <div className="clientImgContainer">
+            <img src={HTML} alt="Client" className="clientImg" />
+            <div className="overlay">HTML</div>
+          </div>
+          <div className="clientImgContainer">
+            <img src={CSS} alt="Client" className="clientImg" />
+            <div className="overlay">CSS</div>
+          </div>
+          <div className="clientImgContainer">
+            <img src={JS} alt="Client" className="clientImg" />
+            <div className="overlay">JavaScript</div>
+          </div>
+          <div className="clientImgContainer">
+            <img src={PG} alt="Client" className="clientImg" />
+            <div className="overlay">PostgreSQL</div>
+          </div>
+          <div className="clientImgContainer">
+            <img src={Expressjs} alt="Client" className="clientImg" />
+            <div className="overlay">Express.js</div>
+          </div>
+          <div className="clientImgContainer">
+            <img src={Sequelize} alt="Client" className="clientImg" />
+            <div className="overlay">Sequelize</div>
+          </div>
+          <div className="clientImgContainer">
+            <img src={Vue} alt="Client" className="clientImg" />
+            <div className="overlay">Vue.js</div>
+          </div>
+          <div className="clientImgContainer">
+            <img src={ReactJS} alt="Client" className="clientImg" />
+            <div className="overlay">React.js</div>
+          </div>
+          <div className="clientImgContainer">
+            <img src={NodeJS} alt="Client" className="clientImg" />
+            <div className="overlay">Node.js</div>
+          </div>
+          <div className="clientImgContainer">
+            <img src={Jquery} alt="Client" className="clientImg" />
+            <div className="overlay">jQuery</div>
+          </div>
+          <div className="clientImgContainer">
+            <img src={Jest} alt="Client" className="clientImg" />
+            <div className="overlay">Jest</div>
+          </div>
+          <div className="clientImgContainer">
+            <img src={Redis} alt="Client" className="clientImg" />
+            <div className="overlay">Redis</div>
+          </div>
+          <div className="clientImgContainer">
+            <img src={Pinia} alt="Client" className="clientImg" />
+            <div className="overlay">Pinia</div>
+          </div>
+          <div className="clientImgContainer">
+            <img src={Redux} alt="Client" className="clientImg" />
+            <div className="overlay">Redux</div>
+          </div>
+          <div className="clientImgContainer">
+            <img src={Tailwind} alt="Client" className="clientImg" />
+            <div className="overlay">Tailwind CSS</div>
+          </div>
+          <div className="clientImgContainer">
+            <img src={Bootstrap} alt="Client" className="clientImg" />
+            <div className="overlay">Bootstrap</div>
+          </div>
+          <div className="clientImgContainer">
+            <img src={MongoDB} alt="Client" className="clientImg" />
+            <div className="overlay">MongoDB</div>
+          </div>
+          <div className="clientImgContainer">
+            <img src={Apollo} alt="Client" className="clientImg" />
+            <div className="overlay">Apollo</div>
+          </div>
+          <div className="clientImgContainer">
+            <img src={GraphQL} alt="Client" className="clientImg" />
+            <div className="overlay">GraphQL</div>
+          </div>
         </div>
       </div>
       <div id="contact">

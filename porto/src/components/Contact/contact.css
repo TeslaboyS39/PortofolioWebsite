@@ -24,11 +24,13 @@
     margin: 1rem 0;
     display: flex;
     flex-wrap: wrap;
+    max-height: 25rem; /* Sesuaikan dengan tinggi maksimal yang diinginkan */
+    overflow-y: auto;
 }
 
 .clientImg {
     object-fit: cover;
-    width: 23%;
+    width: 21%;
     min-width: 9rem;
     margin: auto;
     padding: 0.25rem;
@@ -72,6 +74,13 @@
     border-radius: 0.5rem;
     margin: 2rem;
     padding: 0.75rem 3.5rem;
+    transition: all 0.3s ease;
+}
+
+.submitBtn:hover {
+    background: rgb(59, 127, 245); /* Warna latar berubah saat dihover */
+    color: white; /* Warna teks berubah saat dihover */
+    cursor: pointer;
 }
 
 .links {
@@ -85,3 +94,31 @@
     width: 3rem;
     margin: 0 0.75rem;
 }
+
+.clientImgContainer {
+    position: relative;
+    width: 23%;
+    min-width: 9rem;
+    margin: auto;
+    padding: 0.25rem;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .clientImgContainer:hover .overlay {
+    opacity: 1;
+  }

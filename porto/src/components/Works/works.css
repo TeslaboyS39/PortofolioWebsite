@@ -33,8 +33,29 @@
 
 .worksImg{
     object-fit: cover;
-    height: 20rem;
-    margin: 0.5rem;
+    height: 15rem;
+    margin: 0.5rem;    
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1;
+}
+
+.worksImg:hover {
+    transform: scale(1.1); 
+    z-index: 2;
+}
+
+.worksImg:hover::after {
+    content: "View Details"; 
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.8); 
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+    z-index: 3;
 }
 
 .workBtn {
@@ -51,3 +72,9 @@
         height: 48vw;
     }
 }
+
+.workBtn:hover {
+    background: #f0f0f0; /* Change the background color on hover */
+    color: #333; /* Change the text color on hover */
+    cursor: pointer; /* Add a pointer cursor on hover */
+  }

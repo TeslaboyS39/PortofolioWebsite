@@ -43,10 +43,12 @@ const Intro = () => {
           functional and user-friendly websites.
         </p>
         <Link>
-          <button className="btn">
-            <img src={btnImg} alt="Hire Me" className="btnImg" />
-            Hire Me
-          </button>
+          <Link to="contact" smooth={true} duration={500}>
+            <button className="btn">
+              <img src={btnImg} alt="Hire Me" className="btnImg" />
+              Hire Me
+            </button>
+          </Link>
         </Link>
       </div>
       <img src={bg} alt="Profile" className="bg" />
