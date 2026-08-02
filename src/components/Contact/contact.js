@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./contact.css";
 import HTML from "../../assets/htmllogo.png";
 import CSS from "../../assets/csslogo.png";
@@ -23,18 +23,49 @@ import LinkedinIcon from "../../assets/linkedinIcon.png";
 import GithubIcon from "../../assets/githubIcon.png";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert";
+import Reveal from "../Reveal/Reveal";
+
+const skillIcons = [
+  { img: HTML, alt: "HTML" },
+  { img: CSS, alt: "CSS" },
+  { img: JS, alt: "JavaScript" },
+  { img: PG, alt: "PostgreSQL" },
+  { img: Expressjs, alt: "Express.js" },
+  { img: Sequelize, alt: "Sequelize" },
+  { img: Vue, alt: "Vue.js" },
+  { img: ReactJS, alt: "React.js" },
+  { img: NodeJS, alt: "Node.js" },
+  { img: Jquery, alt: "jQuery" },
+  { img: Jest, alt: "Jest" },
+  { img: Redis, alt: "Redis" },
+  { img: Pinia, alt: "Pinia" },
+  { img: Redux, alt: "Redux" },
+  { img: Tailwind, alt: "Tailwind CSS" },
+  { img: Bootstrap, alt: "Bootstrap" },
+  { img: MongoDB, alt: "MongoDB" },
+  { img: Apollo, alt: "Apollo" },
+  { img: GraphQL, alt: "GraphQL" },
+];
 
 const Contact = () => {
   const form = useRef();
+  const [reducedMotion, setReducedMotion] = useState(false);
+
+  useEffect(() => {
+    setReducedMotion(
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    );
+  }, []);
+
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
       .sendForm(
-        "service_zy7e36i",
-        "template_bhp9j08",
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
         form.current,
-        "ScuWmox5NjM2DC8d4"
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
       )
       .then(
         (result) => {
@@ -52,99 +83,39 @@ const Contact = () => {
         }
       );
   };
+
+  const marqueeIcons = reducedMotion ? skillIcons : [...skillIcons, ...skillIcons];
+
   return (
     <section id="contactPage">
       <div id="clients">
-        <h1 className="contactPageTitle">My Skills</h1>
-        <p className="clientDesc">
+        <Reveal as="h1" className="contactPageTitle">
+          My Skills
+        </Reveal>
+        <Reveal as="p" className="clientDesc" delay={0.1}>
           I have built proficiency in various technologies and tools throughout
           my journey. Below are some of the key components of my technical
           expertise, including the tech stack and tools I am proficient in:
-        </p>
-        <div className="clientImgs">
-          <div className="clientImgContainer">
-            <img src={HTML} alt="Client" className="clientImg" />
-            <div className="overlay">HTML</div>
+        </Reveal>
+        <Reveal className="marqueeViewport" delay={0.2}>
+          <div className={`marqueeTrack ${reducedMotion ? "marqueeStatic" : ""}`}>
+            {marqueeIcons.map((skill, i) => (
+              <div className="clientImgContainer" key={`${skill.alt}-${i}`}>
+                <img src={skill.img} alt={skill.alt} className="clientImg" />
+                <div className="overlay">{skill.alt}</div>
+              </div>
+            ))}
           </div>
-          <div className="clientImgContainer">
-            <img src={CSS} alt="Client" className="clientImg" />
-            <div className="overlay">CSS</div>
-          </div>
-          <div className="clientImgContainer">
-            <img src={JS} alt="Client" className="clientImg" />
-            <div className="overlay">JavaScript</div>
-          </div>
-          <div className="clientImgContainer">
-            <img src={PG} alt="Client" className="clientImg" />
-            <div className="overlay">PostgreSQL</div>
-          </div>
-          <div className="clientImgContainer">
-            <img src={Expressjs} alt="Client" className="clientImg" />
-            <div className="overlay">Express.js</div>
-          </div>
-          <div className="clientImgContainer">
-            <img src={Sequelize} alt="Client" className="clientImg" />
-            <div className="overlay">Sequelize</div>
-          </div>
-          <div className="clientImgContainer">
-            <img src={Vue} alt="Client" className="clientImg" />
-            <div className="overlay">Vue.js</div>
-          </div>
-          <div className="clientImgContainer">
-            <img src={ReactJS} alt="Client" className="clientImg" />
-            <div className="overlay">React.js</div>
-          </div>
-          <div className="clientImgContainer">
-            <img src={NodeJS} alt="Client" className="clientImg" />
-            <div className="overlay">Node.js</div>
-          </div>
-          <div className="clientImgContainer">
-            <img src={Jquery} alt="Client" className="clientImg" />
-            <div className="overlay">jQuery</div>
-          </div>
-          <div className="clientImgContainer">
-            <img src={Jest} alt="Client" className="clientImg" />
-            <div className="overlay">Jest</div>
-          </div>
-          <div className="clientImgContainer">
-            <img src={Redis} alt="Client" className="clientImg" />
-            <div className="overlay">Redis</div>
-          </div>
-          <div className="clientImgContainer">
-            <img src={Pinia} alt="Client" className="clientImg" />
-            <div className="overlay">Pinia</div>
-          </div>
-          <div className="clientImgContainer">
-            <img src={Redux} alt="Client" className="clientImg" />
-            <div className="overlay">Redux</div>
-          </div>
-          <div className="clientImgContainer">
-            <img src={Tailwind} alt="Client" className="clientImg" />
-            <div className="overlay">Tailwind CSS</div>
-          </div>
-          <div className="clientImgContainer">
-            <img src={Bootstrap} alt="Client" className="clientImg" />
-            <div className="overlay">Bootstrap</div>
-          </div>
-          <div className="clientImgContainer">
-            <img src={MongoDB} alt="Client" className="clientImg" />
-            <div className="overlay">MongoDB</div>
-          </div>
-          <div className="clientImgContainer">
-            <img src={Apollo} alt="Client" className="clientImg" />
-            <div className="overlay">Apollo</div>
-          </div>
-          <div className="clientImgContainer">
-            <img src={GraphQL} alt="Client" className="clientImg" />
-            <div className="overlay">GraphQL</div>
-          </div>
-        </div>
+        </Reveal>
       </div>
       <div id="contact">
-        <h1 className="contactPageTitle">Contact Me</h1>
-        <span className="contactDesc">
+        <Reveal as="h1" className="contactPageTitle">
+          Contact Me
+        </Reveal>
+        <Reveal as="span" className="contactDesc" delay={0.1}>
           Please fill out the form below to discuss any work opportunities
-        </span>
+        </Reveal>
+        <Reveal delay={0.2}>
         <form className="contactForm" ref={form} onSubmit={sendEmail}>
           <input
             type="text"
@@ -176,6 +147,7 @@ const Contact = () => {
             </a>
           </div>
         </form>
+        </Reveal>
       </div>
     </section>
   );

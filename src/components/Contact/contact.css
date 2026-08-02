@@ -20,19 +20,52 @@
     font-size: 1rem;
 }
 
-.clientImgs {
+.marqueeViewport {
+    width: 100%;
+    max-width: 60rem;
     margin: 1rem 0;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.marqueeTrack {
     display: flex;
+    width: max-content;
+    animation: marquee 36s linear infinite;
+}
+
+.marqueeViewport:hover .marqueeTrack {
+    animation-play-state: paused;
+}
+
+.marqueeTrack.marqueeStatic {
+    animation: none;
     flex-wrap: wrap;
-    max-height: 25rem; /* Sesuaikan dengan tinggi maksimal yang diinginkan */
+    justify-content: center;
+    width: 100%;
+    max-height: 25rem;
     overflow-y: auto;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .marqueeTrack {
+        animation: none !important;
+    }
 }
 
 .clientImg {
     object-fit: cover;
-    width: 21%;
-    min-width: 9rem;
-    margin: auto;
+    width: 100%;
     padding: 0.25rem;
 }
 
@@ -97,9 +130,9 @@
 
 .clientImgContainer {
     position: relative;
-    width: 23%;
-    min-width: 9rem;
-    margin: auto;
+    flex: 0 0 auto;
+    width: 9rem;
+    margin: 0 0.25rem;
     padding: 0.25rem;
   }
   

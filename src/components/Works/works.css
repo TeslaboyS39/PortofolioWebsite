@@ -1,4 +1,11 @@
 #works {
+    --works-card-h: 13rem;
+    --works-card-w: calc(var(--works-card-h) * 16 / 9);
+    --works-card-pad: 0.6rem;
+    --works-card-border: 0.0625rem;
+    --works-card-outer: calc(var(--works-card-w) + (var(--works-card-pad) + var(--works-card-border)) * 2);
+    --works-gap: 0.75rem;
+    --works-cols: 2;
     margin: 0 auto;
     min-height: calc(100vh - 4rem);
     width: 100vw;
@@ -22,19 +29,89 @@
     max-width: 45rem;
 }
 
-.worksImgs {
+.worksCarousel {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    gap: 0.5rem;
     width: 100%;
     max-width: 65rem;
 }
 
+.worksImgs {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-auto-flow: column;
+    grid-auto-columns: var(--works-card-outer);
+    gap: var(--works-gap);
+    align-content: center;
+    width: 100%;
+    max-width: calc(var(--works-card-outer) * var(--works-cols) + var(--works-gap) * (var(--works-cols) - 1));
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding: 0.25rem 0;
+}
+
+.worksImgs::-webkit-scrollbar {
+    display: none;
+}
+
+.carouselArrow {
+    flex: 0 0 auto;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: white;
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.carouselArrow:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: scale(1.08);
+}
+
+@media screen and (max-width: 585px) {
+    .carouselArrow {
+        display: none;
+    }
+}
+
+.worksCard {
+    display: block;
+    overflow: hidden;
+    line-height: 0;
+    width: var(--works-card-outer);
+    padding: var(--works-card-pad);
+    border: var(--works-card-border) solid rgba(255, 255, 255, 0.12);
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    font: inherit;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.worksCard:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.4);
+}
+
 .worksImg{
+    display: block;
     object-fit: cover;
-    height: 15rem;
-    margin: 0.5rem;    
+    width: var(--works-card-w);
+    height: var(--works-card-h);
+    border-radius: 0.6rem;
     position: relative;
     transition: transform 0.3s ease-in-out;
     z-index: 1;
@@ -59,15 +136,22 @@
 }
 
 .workBtn {
+    display: inline-block;
     margin: 3rem 0;
     padding: 0.5rem 2.5rem;
     border: none;
     background: white;
     border-radius: 2rem;
     font-size: 1rem;
+    color: #333;
+    text-decoration: none;
 }
 
 @media screen and (max-width:585px) {
+    #works {
+        --works-card-w: calc(48vw * 16 / 9);
+        --works-cols: 1;
+    }
     .worksImg{
         height: 48vw;
     }

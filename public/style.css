@@ -14,5 +14,22 @@ body {
     overflow-y: scroll; /*biar bisa discroll y axis*/
 }
 
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        transition: none;
+    }
+}
+
 
 

@@ -1,56 +1,58 @@
 import React from "react";
 import "./skills.css";
-import FrontEnd from "../../assets/ui-design.png";
-import BackEnd from "../../assets/backend.png";
-import FullStack from "../../assets/full-stack.png";
+// TODO: draft kategori skill — belum dikonfirmasi user, dan icon masih placeholder.
+import FullStackIcon from "../../assets/full-stack.png";
+import DesignIcon from "../../assets/ui-design.png";
+import IntegrationIcon from "../../assets/backend.png";
+import Reveal from "../Reveal/Reveal";
+
+const skillBars = [
+  {
+    img: FullStackIcon,
+    alt: "Full-Stack Development",
+    title: "Full-Stack Development",
+    text: "Building end-to-end web applications across front-end and back-end technologies.",
+  },
+  {
+    img: DesignIcon,
+    alt: "Systems Analysis & Design",
+    title: "Systems Analysis & Design",
+    text: "Gathering requirements and designing system architecture that spans both hardware and software.",
+  },
+  {
+    img: IntegrationIcon,
+    alt: "Hardware-Software Integration",
+    title: "Hardware-Software Integration",
+    text: "Coordinating integration between hardware infrastructure and software systems, such as warehouse and fleet management systems.",
+  },
+];
 
 const Skills = () => {
   return (
     <div>
       <section id="skills">
-        <span className="skillTitle">What I do</span>
-        <span className="skillDesc">
-          I am an aspiring web developer with a focus on full-stack development.
-          I have a solid foundation in HTML, CSS, and JavaScript, and I'm
-          proficient in React and Vue for building dynamic user interfaces.
-          Additionally, I have experience with both SQL databases like
-          PostgreSQL and NoSQL databases like MongoDB.
-        </span>
+        <Reveal as="span" className="skillTitle">
+          What I do
+        </Reveal>
+        <Reveal as="span" className="skillDesc" delay={0.1}>
+          I'm a full-stack developer turned systems analyst, passionate about
+          technology across software, systems design, and hardware-integrated
+          solutions.
+        </Reveal>
         <div className="skillBars">
-          <div className="skillBar">
-            <img src={FrontEnd} alt="FrontEnd" className="skillBarImg" />
-            <div className="skillBarText">
-              <h2>Front-End Development</h2>
-              <p>
-                Expertise in building user interfaces with HTML, CSS, and
-                JavaScript. Proficient in React and Vue for creating dynamic and
-                interactive web applications.
-              </p>
-            </div>
-          </div>
-          <div className="skillBar">
-            <img src={BackEnd} alt="BackEnd" className="skillBarImg" />
-            <div className="skillBarText">
-              <h2>Back-End Development</h2>
-              <p>
-                Experience in server-side programming using Node.js and
-                Express.js. Skilled in database management with PostgreSQL and
-                MongoDB. Proficient in testing with Jest for ensuring code
-                quality and reliability.
-              </p>
-            </div>
-          </div>
-          <div className="skillBar">
-            <img src={FullStack} alt="FullStack" className="skillBarImg" />
-            <div className="skillBarText">
-              <h2>Full-stack Development</h2>
-              <p>
-                Combining front-end and back-end skills to create end-to-end web
-                applications. Proficient in both client-side and server-side
-                technologies for seamless development.
-              </p>
-            </div>
-          </div>
+          {skillBars.map((skill, i) => (
+            <Reveal
+              key={skill.title}
+              className="skillBar"
+              delay={0.15 + i * 0.12}
+            >
+              <img src={skill.img} alt={skill.alt} className="skillBarImg" />
+              <div className="skillBarText">
+                <h2>{skill.title}</h2>
+                <p>{skill.text}</p>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </section>
     </div>

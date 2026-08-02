@@ -1,0 +1,100 @@
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    z-index: 100;
+    animation: modalFadeIn 0.2s ease;
+}
+
+.modalContent {
+    position: relative;
+    width: 100%;
+    max-width: 40rem;
+    max-height: 90vh;
+    overflow-y: auto;
+    text-align: left;
+    background: rgba(40, 40, 40, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    animation: modalScaleIn 0.25s ease;
+}
+
+.modalImg {
+    width: 100%;
+    border-radius: 0.6rem;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.modalTitle {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.modalDesc {
+    font-weight: 300;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0.85;
+    margin-bottom: 1.5rem;
+}
+
+.modalLink {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    border-radius: 2rem;
+    background: white;
+    color: #333;
+    font-size: 0.95rem;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.modalLink:hover {
+    background: rgb(59, 127, 245);
+    color: white;
+}
+
+.modalClose {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.modalClose:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; }
+}
+
+@keyframes modalScaleIn {
+    from { transform: scale(0.95); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .modalOverlay,
+    .modalContent {
+        animation: none;
+    }
+}
