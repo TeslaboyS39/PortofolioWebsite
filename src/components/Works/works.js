@@ -1,11 +1,11 @@
 import React from "react";
 import "./works.css";
-import Portfolio1 from "../../assets/web1.png";
-import Portfolio2 from "../../assets/web2.png";
-import Portfolio3 from "../../assets/web3.png";
-import Portfolio4 from "../../assets/web4.png";
-import Portfolio5 from "../../assets/web5.png";
-import Portfolio6 from "../../assets/web6.png";
+import Portfolio1 from "../../assets/web1.webp";
+import Portfolio2 from "../../assets/web2.webp";
+import Portfolio3 from "../../assets/web3.webp";
+import Portfolio4 from "../../assets/web4.webp";
+import Portfolio5 from "../../assets/web5.webp";
+import Portfolio6 from "../../assets/web6.webp";
 
 const Works = () => {
   const portfolioLinks = [
@@ -38,36 +38,42 @@ const Works = () => {
           src={Portfolio1}
           alt=""
           className="worksImg"
+          loading="lazy"
           onClick={() => redirectToGitHub(0)}
         />
         <img
           src={Portfolio2}
           alt=""
           className="worksImg"
+          loading="lazy"
           onClick={() => redirectToGitHub(1)}
         />
         <img
           src={Portfolio3}
           alt=""
           className="worksImg"
+          loading="lazy"
           onClick={() => redirectToGitHub(2)}
         />
         <img
           src={Portfolio4}
           alt=""
           className="worksImg"
+          loading="lazy"
           onClick={() => redirectToGitHub(3)}
         />
         <img
           src={Portfolio5}
           alt=""
           className="worksImg"
+          loading="lazy"
           onClick={() => redirectToGitHub(4)}
         />
         <img
           src={Portfolio6}
           alt=""
           className="worksImg"
+          loading="lazy"
           onClick={() => redirectToGitHub(5)}
         />
       </div>
