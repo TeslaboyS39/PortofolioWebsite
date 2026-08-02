@@ -1,0 +1,45 @@
+2026-08-02T06:38:17.276421Z	Cloning repository...
+2026-08-02T06:38:19.275576Z	From https://github.com/TeslaboyS39/PortofolioWebsite
+2026-08-02T06:38:19.275912Z	 * branch            07dd1eb504bfea9c4138b16ef1e4d0e03f6af885 -> FETCH_HEAD
+2026-08-02T06:38:19.275988Z	
+2026-08-02T06:38:19.351356Z	HEAD is now at 07dd1eb adjusted: new UI and job desc
+2026-08-02T06:38:19.351672Z	
+2026-08-02T06:38:20.324708Z	
+2026-08-02T06:38:20.325146Z	Using v2 root directory strategy
+2026-08-02T06:38:20.338408Z	Success: Finished cloning repository files
+2026-08-02T06:38:22.932018Z	Checking for configuration in a Wrangler configuration file (BETA)
+2026-08-02T06:38:22.932528Z	
+2026-08-02T06:38:23.137134Z	No Wrangler configuration file found. Continuing.
+2026-08-02T06:38:23.413177Z	Detected the following tools from environment: npm@10.9.2, nodejs@22.16.0
+2026-08-02T06:38:23.413713Z	Installing project dependencies: npm clean-install --progress=false
+2026-08-02T06:38:30.211541Z	npm warn deprecated w3c-hr-time@1.0.2: Use your platform's native performance.now() and performance.timeOrigin.
+2026-08-02T06:38:30.637395Z	npm warn deprecated stable@0.1.8: Modern JS already guarantees Array#sort() is a stable sort, so this library is deprecated. See the compatibility table on MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#browser_compatibility
+2026-08-02T06:38:30.829397Z	npm warn deprecated sourcemap-codec@1.4.8: Please use @jridgewell/sourcemap-codec instead
+2026-08-02T06:38:30.899693Z	npm warn deprecated rollup-plugin-terser@7.0.2: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-terser
+2026-08-02T06:38:31.843617Z	npm warn deprecated workbox-cacheable-response@6.6.0: workbox-background-sync@6.6.0
+2026-08-02T06:38:35.509162Z	npm warn deprecated svgo@1.3.2: This SVGO version is no longer supported. Upgrade to v2.x.x.
+2026-08-02T06:38:35.559654Z	npm warn deprecated @babel/plugin-proposal-nullish-coalescing-operator@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-nullish-coalescing-operator instead.
+2026-08-02T06:38:35.560118Z	npm warn deprecated @babel/plugin-proposal-optional-chaining@7.21.0: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-optional-chaining instead.
+2026-08-02T06:38:35.560252Z	npm warn deprecated @babel/plugin-proposal-private-methods@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-private-methods instead.
+2026-08-02T06:38:35.562Z	npm warn deprecated @babel/plugin-proposal-class-properties@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-class-properties instead.
+2026-08-02T06:38:35.562104Z	npm warn deprecated @babel/plugin-proposal-numeric-separator@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-numeric-separator instead.
+2026-08-02T06:38:48.287933Z	
+2026-08-02T06:38:48.289545Z	added 1535 packages, and audited 1536 packages in 24s
+2026-08-02T06:38:48.2898Z	
+2026-08-02T06:38:48.289901Z	246 packages are looking for funding
+2026-08-02T06:38:48.289982Z	  run `npm fund` for details
+2026-08-02T06:38:48.40528Z	
+2026-08-02T06:38:48.405603Z	67 vulnerabilities (15 low, 18 moderate, 31 high, 3 critical)
+2026-08-02T06:38:48.405669Z	
+2026-08-02T06:38:48.405729Z	To address issues that do not require attention, run:
+2026-08-02T06:38:48.405794Z	  npm audit fix
+2026-08-02T06:38:48.405873Z	
+2026-08-02T06:38:48.405927Z	To address all issues (including breaking changes), run:
+2026-08-02T06:38:48.405976Z	  npm audit fix --force
+2026-08-02T06:38:48.406021Z	
+2026-08-02T06:38:48.40606Z	Run `npm audit` for details.
+2026-08-02T06:38:48.500475Z	Executing user command: react-static build
+2026-08-02T06:38:48.509669Z	/bin/sh: 1: react-static: not found
+2026-08-02T06:38:48.511548Z	Failed: Error while executing user command. Exited with error code: 127
+2026-08-02T06:38:48.523Z	Failed: build command exited with code: 1
+2026-08-02T06:38:49.228182Z	Failed: error occurred while running build command
